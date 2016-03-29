@@ -1,0 +1,72 @@
+######################################################
+#
+# Inventory for nwu vaal
+#
+# adapted from ufs inventory
+#
+############## Cluster oriented grouping #############
+
+[ldap-servers]
+#ldap.sagrid.ac.za needs_certificate=false
+
+[shibboleth-idps]
+#idp.sagrid.ac.za needs_certificate=false
+
+[identity-all:children]
+#ldap-servers
+#shibboleth-idps
+
+[user-interfaces]
+#ui.ufs.ac.za needs_certificate='false' emi_service='UI' yaim_options='-n UI'
+
+#############
+# site services #
+#############
+
+# Site BDII
+[site-bdiis]
+ov-gebou9-102-118.v.nwu.ac.za needs_certificate='false' emi_service='BDII_site' yaim_options='-n BDII_site'
+
+# CREAM CE's
+[cream-ces]
+rkv-lnx2.puk.ac.za needs_certificate='true' emi_service='CREAM_CE' yaim_options='-n MPI_CE -n creamCE -n TORQUE_server -n TORQUE_utils'
+
+[apel-publishers:children]
+cream-ces
+
+[storage-elements]
+# Xrootd machine
+#grid-se.ufs.ac.za needs_certificate='true'
+
+# Worker Nodes
+[worker-nodes]
+196.253.42.123 needs_certificate='false' emi_service='WN' yaim_options='-n WN'
+196.253.42.208 needs_certificate='false' emi_service='WN' yaim_options='-n WN'
+
+############ grouping and children ############
+[site-services:children]
+site-bdiis
+cream-ces
+worker-nodes
+
+############## Service oriented grouping ##############
+# (here comes the magical power of ansible... Group things
+# in as much as you can)
+
+
+############## Middleware oriented grouping ##############
+
+[CRL]
+[CRL:children]
+cream-ces
+#user-interfaces
+#storage-elements
+
+[za-nwu-vaal:children]
+cream-ces
+site-bdiis
+worker-nodes
+#user-interfaces
+
+############################ END #########################
+
