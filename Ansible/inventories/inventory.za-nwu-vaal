@@ -51,15 +51,15 @@ cream-ces
 
 
 ############ grouping and children ############
+
 [site-services:children]
 site-bdiis
 cream-ces
 worker-nodes
 
-############## Service oriented grouping ##############
-# (here comes the magical power of ansible... Group things
-# in as much as you can)
-
+[CentOS-servers:children]
+# All site services are CentOS machines
+site-services
 
 ############## Middleware oriented grouping ##############
 
