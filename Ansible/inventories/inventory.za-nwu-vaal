@@ -2,7 +2,7 @@
 #
 # Inventory for nwu vaal
 #
-# adapted from ufs inventory
+# Adapted from ufs inventory
 #
 ############## Cluster oriented grouping #############
 
@@ -25,11 +25,13 @@
 
 # Site BDII
 [site-bdiis]
-ov-gebou9-102-118.v.nwu.ac.za needs_certificate='false' emi_service='BDII_site' yaim_options='-n BDII_site'
+ov-gebou9-102-118.v.nwu.ac.za needs_certificate=false emi_service='BDII_site' yaim_options='-n BDII_site'
+#site-bdii-dev.c4.csir.co.za needs_certificate=false emi_service='BDII_site' yaim_options='-n BDII_site' hosts={{groups.all}}
 
 # CREAM CE's
 [cream-ces]
-rkv-lnx2.puk.ac.za needs_certificate='true' emi_service='CREAM_CE' yaim_options='-n MPI_CE -n creamCE -n TORQUE_server -n TORQUE_utils'
+rkv-lnx2.puk.ac.za needs_certificate=true emi_service='CREAM_CE' yaim_options='-n MPI_CE -n creamCE -n TORQUE_server -n TORQUE_utils'
+#ce-dev.c4.csir.co.za needs_certificate=true emi_service='CREAM_CE' yaim_options='-n MPI_CE -n creamCE -n TORQUE_server -n TORQUE_utils'
 
 [apel-publishers:children]
 cream-ces
@@ -40,8 +42,13 @@ cream-ces
 
 # Worker Nodes
 [worker-nodes]
-196.253.42.123 needs_certificate='false' emi_service='WN' yaim_options='-n WN'
-196.253.42.208 needs_certificate='false' emi_service='WN' yaim_options='-n WN'
+196.253.42.123
+196.253.42.208
+#196.253.42.123 needs_certificate='false' emi_service='WN' yaim_options='-n WN'
+#196.253.42.208 needs_certificate='false' emi_service='WN' yaim_options='-n WN'
+#gnode-1-1 emi_service='WN' yaim_options=' -n WN -n TORQUE_client'
+
+
 
 ############ grouping and children ############
 [site-services:children]
@@ -56,9 +63,9 @@ worker-nodes
 
 ############## Middleware oriented grouping ##############
 
-[CRL]
-[CRL:children]
-cream-ces
+#[CRL]
+#[CRL:children]
+#cream-ces
 #user-interfaces
 #storage-elements
 
@@ -69,4 +76,3 @@ worker-nodes
 #user-interfaces
 
 ############################ END #########################
-
