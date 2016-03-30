@@ -16,7 +16,7 @@
      domain: africa-arabia-roc.slack.com
      token: sBWZXBHgua6QqSnj6QDw9bFE
      msg: "Starting bootstrap on {{ inventory_hostname }} at {{ site_name }}"
-     channel: "#devops-bootstrap"
+     channel: "#za-nwu-ops"
      username: "Ansible on {{ inventory_hostname }}"
      #icon_url: "http://www.example.com/some-image-file.png"
      link_names: 1
@@ -29,7 +29,7 @@
       domain: africa-arabia-roc.slack.com
       token: sBWZXBHgua6QqSnj6QDw9bFE
       msg: "bootstrap on {{ inventory_hostname }} has run at {{ site_name }}"
-      channel: "#devops-bootstrap"
+      channel: "#za-nwu-ops"
       username: "Ansible on {{ inventory_hostname }}"
       #icon_url: "http://www.example.com/some-image-file.png"
       link_names: 1
