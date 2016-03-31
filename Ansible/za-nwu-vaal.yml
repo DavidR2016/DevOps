@@ -59,7 +59,7 @@
   user: ansible
   sudo: true
   roles:
-    - certificates
+#    - certificates
     - umd
     - cream-ce
   handlers:
