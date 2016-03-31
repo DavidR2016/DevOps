@@ -60,10 +60,9 @@ site_domain: nwu.ac.za
 bdii_host: ov-gebou9-102-118.v.nwu.ac.za
 apel_mysql_host: rkv-lnx2.puk.ac.za
 px_host: myproxy.cern.ch
-px_host: ""
 #wms_host: wms.hellasgrid.gr
 # check GOCDB for relevant services in the AfricaArabia https://goc.egi.eu/portal/index.php?Page_Type=Service_Group&id=926
-wms_host: "wms.c4.csir.co.za"
+#wms_host: "wms.c4.csir.co.za"
 wms_host: ""
 is_both_wms_and_lb: true
 lb_proxy_type: both
